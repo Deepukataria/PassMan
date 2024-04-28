@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { Bounce, ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const Manager = () => {
   const ref = useRef();
@@ -49,17 +47,6 @@ const Manager = () => {
         username: "",
         password: "",
       });
-      toast("Password saved", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: false,
-        theme: "light",
-        transition: Bounce,
-      });
     }
   };
 
@@ -69,17 +56,6 @@ const Manager = () => {
       "passwords",
       JSON.stringify(passwordArray.filter((item) => item.id !== id))
     );
-    toast("Deleted Successfully", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: false,
-      theme: "light",
-      transition: Bounce,
-    });
   };
 
   const editPassword = (id) => {
@@ -88,17 +64,6 @@ const Manager = () => {
   };
 
   const copyText = (text) => {
-    toast("Copy to clipboard", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-    });
     navigator.clipboard.writeText(text);
   };
 
@@ -107,20 +72,6 @@ const Manager = () => {
   };
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        transition="Bounce"
-      />
-      <ToastContainer />
       <div className="absolute inset-0 -z-10 h-full w-full bg-green-50 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
         <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div>
       </div>
